@@ -175,10 +175,17 @@ public class MusicOrganizer
             addTrack(track);
         }
     }
+    public Track getTrack(int index){
+        if (indexValid(index)) {
+            return tracks.get(index);
+        }
+        return null;
+    }
     public static void main(String[]args){
         MusicOrganizer mo = new MusicOrganizer();
         mo.listAllTracks();
         mo.playTrack(4);
 
     }
+
 }

@@ -7,6 +7,9 @@ import java.util.ArrayList;
  * @author David J. Barnes and Michael Kölling
  * @version 2016.02.29
  */
+
+
+
 public class MusicOrganizer
 {
     // An ArrayList for storing music tracks.
@@ -15,6 +18,7 @@ public class MusicOrganizer
     private MusicPlayer player;
     // A reader that can read music files and load them as tracks.
     private TrackReader reader;
+
 
     /**
      * Create a MusicOrganizer
@@ -57,6 +61,7 @@ public class MusicOrganizer
             Track track = tracks.get(index);
             player.startPlaying(track.getFilename());
             System.out.println("Now playing: " + track.getArtist() + " - " + track.getTitle());
+
         }
     }
     
@@ -169,5 +174,11 @@ public class MusicOrganizer
         for(Track track : tempTracks) {
             addTrack(track);
         }
+    }
+    public static void main(String[]args){
+        MusicOrganizer mo = new MusicOrganizer();
+        mo.listAllTracks();
+        mo.playTrack(4);
+
     }
 }
